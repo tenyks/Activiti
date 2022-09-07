@@ -37,8 +37,6 @@ import org.slf4j.LoggerFactory;
  * It's similar to the {@link ContinueProcessOperation}, but simpler, as it doesn't need to
  * cater for as many use cases.
  *
-
-
  */
 public class ContinueMultiInstanceOperation extends AbstractOperation {
 

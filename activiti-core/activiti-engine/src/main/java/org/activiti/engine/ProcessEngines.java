@@ -51,8 +51,6 @@ import org.slf4j.LoggerFactory;
  * The {@link #init()} method will try to build one {@link ProcessEngine} for each activiti.cfg.xml file found on the classpath. If you have more then one, make sure you specify different
  * process.engine.name values.
  *
-
-
  */
 public abstract class ProcessEngines {
 

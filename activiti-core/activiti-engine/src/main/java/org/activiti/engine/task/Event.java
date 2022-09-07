@@ -23,10 +23,10 @@ import java.util.List;
 
 import org.activiti.engine.TaskService;
 
-/** Exposes twitter-like feeds for tasks and process instances.
+/**
+ * Exposes twitter-like feeds for tasks and process instances.
  *
  * @see {@link TaskService#getTaskEvents(String)
-
  */
 public interface Event extends Serializable {
 
