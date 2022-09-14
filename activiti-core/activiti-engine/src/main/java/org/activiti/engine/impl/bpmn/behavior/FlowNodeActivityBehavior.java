@@ -23,11 +23,10 @@ import org.activiti.engine.impl.delegate.TriggerableActivityBehavior;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 
 /**
- * Superclass for all 'connectable' BPMN 2.0 process elements: tasks, gateways and events. This means that any subclass can be the source or target of a sequenceflow.
+ * Superclass for all 'connectable' BPMN 2.0 process elements: tasks, gateways and events.
+ * This means that any subclass can be the source or target of a sequence-flow.
  *
  * Corresponds with the notion of the 'flownode' in BPMN 2.0.
- *
-
  */
 public abstract class FlowNodeActivityBehavior implements TriggerableActivityBehavior {
 
@@ -43,7 +42,8 @@ public abstract class FlowNodeActivityBehavior implements TriggerableActivityBeh
   }
 
   /**
-   * Default way of leaving a BPMN 2.0 activity: evaluate the conditions on the outgoing sequence flow and take those that evaluate to true.
+   * Default way of leaving a BPMN 2.0 activity: <br>
+   *     evaluate the conditions on the outgoing sequence flow and take those that evaluate to true.
    */
   public void leave(DelegateExecution execution) {
     bpmnActivityBehavior.performDefaultOutgoingBehavior((ExecutionEntity) execution);

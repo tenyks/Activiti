@@ -234,7 +234,7 @@ public class ContinueProcessOperation extends AbstractOperation {
 
     protected void continueThroughSequenceFlow(SequenceFlow sequenceFlow) {
 
-        // Execution listener. Sequenceflow only 'take' makes sense ... but we've supported all three since the beginning
+        // Execution listener. SequenceFlow only 'take' makes sense ... but we've supported all three since the beginning
         if (CollectionUtil.isNotEmpty(sequenceFlow.getExecutionListeners())) {
             executeExecutionListeners(sequenceFlow,
                                       ExecutionListener.EVENTNAME_START);

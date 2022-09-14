@@ -29,8 +29,6 @@ import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
  *
  * The {@link ExecutionEntity} for this operations should be in a wait state (receive task for example)
  * and have a {@link FlowElement} that has a behaviour that implements the {@link TriggerableActivityBehavior}.
- *
-
  */
 public class TriggerExecutionOperation extends AbstractOperation {
 

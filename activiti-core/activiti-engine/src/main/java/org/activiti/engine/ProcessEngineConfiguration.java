@@ -133,6 +133,9 @@ public abstract class ProcessEngineConfiguration {
   protected int jdbcPingConnectionNotUsedFor;
   protected int jdbcDefaultTransactionIsolationLevel;
   protected DataSource dataSource;
+    /**
+     * 事务是否有外部提供者管理
+     */
   protected boolean transactionsExternallyManaged;
 
   protected String jpaPersistenceUnitName;

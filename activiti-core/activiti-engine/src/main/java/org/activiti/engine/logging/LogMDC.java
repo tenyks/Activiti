@@ -20,10 +20,7 @@ import org.slf4j.MDC;
 
 /**
  * Constants and functions for MDC (Mapped Diagnostic Context) logging
- *
-
  */
-
 public class LogMDC {
 
   public static final String LOG_MDC_PROCESSDEFINITION_ID = "mdcProcessDefinitionID";

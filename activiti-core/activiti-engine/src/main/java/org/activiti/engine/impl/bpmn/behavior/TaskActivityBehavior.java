@@ -27,7 +27,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
  *
  * When used on its own, it behaves just as a pass-through activity.
  *
-
  */
 public class TaskActivityBehavior extends AbstractBpmnActivityBehavior {
 

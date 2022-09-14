@@ -24,8 +24,6 @@ import javax.persistence.PersistenceContext;
 
 /**
  * Service bean that handles loan requests.
- *
-
  */
 public class LoanRequestBean {
 

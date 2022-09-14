@@ -20,7 +20,8 @@ package org.activiti.engine.impl.bpmn.parser;
 import java.io.Serializable;
 
 /**
-
+ * 回归或回退事件或undoing
+ * 参考：http://www.bpm-guide.de/2012/03/02/activiti-5-9-introduces-bpmn-compensation-and-transactions/
  */
 public class CompensateEventDefinition implements Serializable {
 

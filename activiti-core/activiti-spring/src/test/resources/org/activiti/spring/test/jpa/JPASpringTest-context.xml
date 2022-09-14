@@ -33,8 +33,7 @@
         </property>
     </bean>
 
-    <bean id="loanRequestBean" class="org.activiti.spring.test.jpa.LoanRequestBean">
-    </bean>
+    <bean id="loanRequestBean" class="org.activiti.spring.test.jpa.LoanRequestBean" />
 
     <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
         <property name="dataSource" ref="dataSource"/>

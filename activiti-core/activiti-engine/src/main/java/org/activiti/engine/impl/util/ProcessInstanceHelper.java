@@ -47,8 +47,7 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 
 /**
-
-
+ *
  */
 public class ProcessInstanceHelper {
 

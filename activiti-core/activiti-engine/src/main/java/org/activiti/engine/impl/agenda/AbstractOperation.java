@@ -32,8 +32,6 @@ import org.activiti.engine.impl.util.ProcessDefinitionUtil;
  *
  * An operations is a {@link Runnable} instance that is put on the {@link Agenda} during
  * the execution of a {@link Command}.
- *
-
  */
 public abstract class AbstractOperation implements Runnable {
 

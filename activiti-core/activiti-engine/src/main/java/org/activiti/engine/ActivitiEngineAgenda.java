@@ -36,6 +36,10 @@ public interface ActivitiEngineAgenda extends Agenda {
 
     void planEndExecutionOperation(ExecutionEntity execution);
 
+    /**
+     * 触发下一步
+     * @param execution
+     */
     void planTriggerExecutionOperation(ExecutionEntity execution);
 
     void planDestroyScopeOperation(ExecutionEntity execution);

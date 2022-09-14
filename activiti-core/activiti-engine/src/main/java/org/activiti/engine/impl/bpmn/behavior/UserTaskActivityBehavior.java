@@ -226,6 +226,7 @@ public class UserTaskActivityBehavior extends TaskActivityBehavior {
         activeTaskCandidateUsers, activeTaskCandidateGroups, task, expressionManager, execution);
     }
 
+    // 触发[任务已创建]监听器
     processEngineConfiguration.getListenerNotificationHelper().executeTaskListeners(task, TaskListener.EVENTNAME_CREATE);
 
     // All properties set, now fire events
@@ -234,8 +235,7 @@ public class UserTaskActivityBehavior extends TaskActivityBehavior {
       eventDispatcher.dispatchEvent(
           ActivitiEventBuilder.createEntityEvent(ActivitiEventType.TASK_CREATED, task));
       if (task.getAssignee() != null) {
-        eventDispatcher.dispatchEvent(
-                ActivitiEventBuilder.createEntityEvent(ActivitiEventType.TASK_ASSIGNED, task));
+        eventDispatcher.dispatchEvent(ActivitiEventBuilder.createEntityEvent(ActivitiEventType.TASK_ASSIGNED, task));
       }
     }
 
@@ -266,8 +266,7 @@ public class UserTaskActivityBehavior extends TaskActivityBehavior {
       }
     }
 
-    propagateVariablesToProcess(execution,
-                                commandContext);
+    propagateVariablesToProcess(execution, commandContext);
 
     leave(execution);
   }

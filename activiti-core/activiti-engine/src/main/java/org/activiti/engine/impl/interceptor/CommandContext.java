@@ -432,7 +432,8 @@ public class CommandContext {
         return processEngineConfiguration.getJobManager();
     }
 
-    // Involved executions ////////////////////////////////////////////////////////
+    // Involved executions
+    // //////////////////////////////////////////////////////
 
     public void addInvolvedExecution(ExecutionEntity executionEntity) {
         if (executionEntity.getId() != null) {

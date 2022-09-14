@@ -26,9 +26,9 @@ import org.activiti.engine.impl.interceptor.Command;
 import org.activiti.engine.impl.persistence.entity.VariableInstance;
 
 /**
- * Interface for class that acts as a scope for variables: i.e. the implementation
- * can be used to set and get variables.
- *
+ * Interface for class that acts as a scope for variables:
+ * i.e. the implementation can be used to set and get variables.
+ * <br>
  * Typically, executions (and thus process instances) and tasks are the primary use case
  * to get and set variables. The {@link DelegateExecution} for example is often used
  * in {@link JavaDelegate} implementation to get and set variables.

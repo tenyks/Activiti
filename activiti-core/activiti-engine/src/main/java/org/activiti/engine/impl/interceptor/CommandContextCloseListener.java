@@ -21,7 +21,6 @@ import org.activiti.engine.impl.cfg.TransactionContext;
 /**
  * A listener that can be used to be notified of lifecycle events of the {@link CommandContext}.
  *
-
  */
 @Internal
 public interface CommandContextCloseListener {

@@ -56,8 +56,6 @@ import org.slf4j.LoggerFactory;
  * Only subclasses of {@link AbstractBpmnActivityBehavior} can have multi-instance behavior. As such, special logic is contained in the {@link AbstractBpmnActivityBehavior} to delegate to the
  * {@link MultiInstanceActivityBehavior} if needed.
  *
-
-
  */
 public abstract class MultiInstanceActivityBehavior extends FlowNodeActivityBehavior implements SubProcessActivityBehavior {
 

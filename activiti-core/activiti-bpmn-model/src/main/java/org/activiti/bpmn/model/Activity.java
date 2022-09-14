@@ -26,6 +26,9 @@ public abstract class Activity extends FlowNode {
   protected IOSpecification ioSpecification;
   protected List<DataAssociation> dataInputAssociations = new ArrayList<DataAssociation>();
   protected List<DataAssociation> dataOutputAssociations = new ArrayList<DataAssociation>();
+    /**
+     * 边界事件
+     */
   protected List<BoundaryEvent> boundaryEvents = new ArrayList<BoundaryEvent>();
   protected String failedJobRetryTimeCycleValue;
   protected List<MapExceptionEntry> mapExceptions = new ArrayList<MapExceptionEntry>();
