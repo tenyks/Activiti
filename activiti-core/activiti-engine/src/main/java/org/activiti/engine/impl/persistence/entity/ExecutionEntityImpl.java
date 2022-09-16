@@ -254,8 +254,9 @@ public class ExecutionEntityImpl extends VariableScopeImpl implements ExecutionE
    return persistentState;
  }
 
-  // The current flow element, will be filled during operation execution
-
+    /**
+     * The current flow element, will be filled during operation execution
+     */
   public FlowElement getCurrentFlowElement() {
     if (currentFlowElement == null) {
       String processDefinitionId = getProcessDefinitionId();

@@ -28,6 +28,7 @@ import org.activiti.engine.impl.db.HasRevision;
 import org.activiti.engine.task.Task;
 
 /**
+ * 同BPMN2.0的任务
  */
 @Internal
 public interface TaskEntity extends VariableScope, Task, DelegateTask, Entity, HasRevision {

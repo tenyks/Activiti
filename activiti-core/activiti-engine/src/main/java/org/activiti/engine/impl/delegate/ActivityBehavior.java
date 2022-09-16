@@ -22,7 +22,7 @@ import org.activiti.engine.api.internal.Internal;
 import org.activiti.engine.delegate.DelegateExecution;
 
 /**
- * 工作流元素行为
+ * 工作流活动行为
  */
 @Internal
 public interface ActivityBehavior extends Serializable {

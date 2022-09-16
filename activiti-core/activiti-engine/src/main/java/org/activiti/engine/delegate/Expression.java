@@ -22,6 +22,9 @@ import java.util.Map;
 import org.activiti.engine.impl.el.ExpressionManager;
 import org.activiti.engine.impl.interceptor.DelegateInterceptor;
 
+/**
+ * 表达式
+ */
 public interface Expression extends Serializable {
 
     Object getValue(VariableScope variableScope);

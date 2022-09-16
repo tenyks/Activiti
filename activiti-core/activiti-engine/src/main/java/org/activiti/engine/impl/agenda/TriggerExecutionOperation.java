@@ -53,7 +53,6 @@ public class TriggerExecutionOperation extends AbstractOperation {
         if (currentFlowElement instanceof BoundaryEvent) {
           commandContext.getHistoryManager().recordActivityEnd(execution, null);
         }
-
       } else {
         throw new ActivitiException("Invalid behavior: " + activityBehavior + " should implement " + TriggerableActivityBehavior.class.getName());
       }

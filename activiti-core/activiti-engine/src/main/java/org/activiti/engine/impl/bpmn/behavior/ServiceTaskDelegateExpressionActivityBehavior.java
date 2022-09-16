@@ -67,7 +67,6 @@ public class ServiceTaskDelegateExpressionActivityBehavior extends TaskActivityB
   }
 
   public void execute(DelegateExecution execution) {
-
     try {
       boolean isSkipExpressionEnabled = SkipExpressionUtil.isSkipExpressionEnabled(execution, skipExpression);
       if (!isSkipExpressionEnabled || (isSkipExpressionEnabled && !SkipExpressionUtil.shouldSkipFlowElement(execution, skipExpression))) {

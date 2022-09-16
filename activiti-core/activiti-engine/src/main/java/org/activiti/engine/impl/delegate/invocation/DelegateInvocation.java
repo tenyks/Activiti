@@ -19,9 +19,8 @@ package org.activiti.engine.impl.delegate.invocation;
 import org.activiti.engine.impl.interceptor.DelegateInterceptor;
 
 /**
- * Provides context about the invocation of usercode and handles the actual invocation
+ * Provides context about the invocation of user-code and handles the actual invocation
  *
-
  * @see DelegateInterceptor
  */
 public abstract class DelegateInvocation {
@@ -32,8 +31,7 @@ public abstract class DelegateInvocation {
   /**
    * make the invocation proceed, performing the actual invocation of the user code.
    *
-   * @throws Exception
-   *           the exception thrown by the user code
+   * @throws Exception the exception thrown by the user code
    */
   public void proceed() {
     invoke();

@@ -58,11 +58,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
  * Helper class for bpmn constructs that allow class delegation.
  *
  * This class will lazily instantiate the referenced classes when needed at runtime.
- *
-
-
-
-
  */
 public class ClassDelegate extends AbstractBpmnActivityBehavior implements TaskListener, ExecutionListener, TransactionDependentExecutionListener, TransactionDependentTaskListener, SubProcessActivityBehavior, CustomPropertiesResolver {
 

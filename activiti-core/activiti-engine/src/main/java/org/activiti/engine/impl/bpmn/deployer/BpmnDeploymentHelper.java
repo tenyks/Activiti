@@ -36,7 +36,7 @@ import org.activiti.engine.task.IdentityLinkType;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Methods for working with deployments.  Much of the actual work of {@link BpmnDeployer} is
+ * Methods for working with deployments.  Much of the actual work of {@link BpmnDeployer} isIdentityLinkType
  * done by orchestrating the different pieces of work this class does; by having them here,
  * we allow other deployers to make use of them.
  */

@@ -25,6 +25,10 @@ public class SequenceFlow extends FlowElement {
   protected String conditionExpression;
   protected String sourceRef;
   protected String targetRef;
+
+    /**
+     * 条件表达式，如果计算结果为true，跳过conditionExpression的判定
+     */
   protected String skipExpression;
 
   // Actual flow elements that match the source and target ref

@@ -21,8 +21,6 @@ import org.activiti.engine.delegate.JavaDelegate;
 
 /**
  * Class handling invocations of JavaDelegates
- *
-
  */
 public class JavaDelegateInvocation extends DelegateInvocation {
 

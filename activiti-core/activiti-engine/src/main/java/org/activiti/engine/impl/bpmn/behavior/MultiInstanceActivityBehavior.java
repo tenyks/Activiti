@@ -53,7 +53,8 @@ import org.slf4j.LoggerFactory;
  *
  * Multi instance functionality is implemented as an {@link ActivityBehavior} that wraps the original {@link ActivityBehavior} of the activity.
  *
- * Only subclasses of {@link AbstractBpmnActivityBehavior} can have multi-instance behavior. As such, special logic is contained in the {@link AbstractBpmnActivityBehavior} to delegate to the
+ * Only subclasses of {@link AbstractBpmnActivityBehavior} can have multi-instance behavior.
+ * As such, special logic is contained in the {@link AbstractBpmnActivityBehavior} to delegate to the
  * {@link MultiInstanceActivityBehavior} if needed.
  *
  */
