@@ -27,6 +27,10 @@ import org.activiti.engine.impl.util.ProcessDefinitionUtil;
 import org.activiti.engine.impl.util.ProcessInstanceHelper;
 import org.activiti.engine.runtime.ProcessInstance;
 
+/**
+ * 开始流程实例的执行
+ * @param <T>
+ */
 public class StartCreatedProcessInstanceCmd<T> implements Command<ProcessInstance>, Serializable {
 
     private static final long serialVersionUID = 1L;

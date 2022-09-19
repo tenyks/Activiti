@@ -34,8 +34,7 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 
 /**
-
-
+ * 创建并启动一个流程实例
  */
 public class StartProcessInstanceCmd<T> implements Command<ProcessInstance>, Serializable {
 
@@ -49,14 +48,16 @@ public class StartProcessInstanceCmd<T> implements Command<ProcessInstance>, Ser
   protected String processInstanceName;
   protected ProcessInstanceHelper processInstanceHelper;
 
-  public StartProcessInstanceCmd(String processDefinitionKey, String processDefinitionId, String businessKey, Map<String, Object> variables) {
+  public StartProcessInstanceCmd(String processDefinitionKey, String processDefinitionId,
+                                 String businessKey, Map<String, Object> variables) {
     this.processDefinitionKey = processDefinitionKey;
     this.processDefinitionId = processDefinitionId;
     this.businessKey = businessKey;
     this.variables = variables;
   }
 
-  public StartProcessInstanceCmd(String processDefinitionKey, String processDefinitionId, String businessKey, Map<String, Object> variables, String tenantId) {
+  public StartProcessInstanceCmd(String processDefinitionKey, String processDefinitionId,
+                                 String businessKey, Map<String, Object> variables, String tenantId) {
     this(processDefinitionKey, processDefinitionId, businessKey, variables);
     this.tenantId = tenantId;
   }

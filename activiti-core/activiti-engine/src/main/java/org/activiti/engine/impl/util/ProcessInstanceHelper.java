@@ -208,7 +208,10 @@ public class ProcessInstanceHelper {
         }
     }
 
-    public void startProcessInstance(ExecutionEntity processInstance, CommandContext commandContext, Map<String, Object> variables, FlowElement initialFlowElement, Map<String, Object> transientVariables) {
+    // ANN: IMPORTANT
+    public void startProcessInstance(ExecutionEntity processInstance, CommandContext commandContext,
+                                     Map<String, Object> variables, FlowElement initialFlowElement,
+                                     Map<String, Object> transientVariables) {
         Process process = ProcessDefinitionUtil.getProcess(processInstance.getProcessDefinitionId());
         createProcessVariables(processInstance, variables, transientVariables, process);
         recordStartProcessInstance(commandContext, initialFlowElement, processInstance);

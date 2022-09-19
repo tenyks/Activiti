@@ -118,7 +118,8 @@ import org.activiti.engine.impl.util.ReflectUtil;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Default implementation of the {@link ActivityBehaviorFactory}. Used when no custom {@link ActivityBehaviorFactory} is injected on the {@link ProcessEngineConfigurationImpl}.
+ * Default implementation of the {@link ActivityBehaviorFactory}.
+ * Used when no custom {@link ActivityBehaviorFactory} is injected on the {@link ProcessEngineConfigurationImpl}.
  */
 public class DefaultActivityBehaviorFactory extends AbstractBehaviorFactory implements ActivityBehaviorFactory {
 
@@ -219,17 +220,14 @@ public class DefaultActivityBehaviorFactory extends AbstractBehaviorFactory impl
     }
 
     public MailActivityBehavior createMailActivityBehavior(ServiceTask serviceTask) {
-        return createMailActivityBehavior(serviceTask.getId(),
-                                          serviceTask.getFieldExtensions());
+        return createMailActivityBehavior(serviceTask.getId(), serviceTask.getFieldExtensions());
     }
 
     public MailActivityBehavior createMailActivityBehavior(SendTask sendTask) {
-        return createMailActivityBehavior(sendTask.getId(),
-                                          sendTask.getFieldExtensions());
+        return createMailActivityBehavior(sendTask.getId(), sendTask.getFieldExtensions());
     }
 
-    protected MailActivityBehavior createMailActivityBehavior(String taskId,
-                                                              List<FieldExtension> fields) {
+    protected MailActivityBehavior createMailActivityBehavior(String taskId, List<FieldExtension> fields) {
         List<FieldDeclaration> fieldDeclarations = createFieldDeclarations(fields);
         return (MailActivityBehavior) ClassDelegate.defaultInstantiateDelegate(
                 MailActivityBehavior.class,
@@ -239,13 +237,11 @@ public class DefaultActivityBehaviorFactory extends AbstractBehaviorFactory impl
     // We do not want a hard dependency on Mule, hence we return
     // ActivityBehavior and instantiate the delegate instance using a string instead of the Class itself.
     public ActivityBehavior createMuleActivityBehavior(ServiceTask serviceTask) {
-        return createMuleActivityBehavior(serviceTask,
-                                          serviceTask.getFieldExtensions());
+        return createMuleActivityBehavior(serviceTask, serviceTask.getFieldExtensions());
     }
 
     public ActivityBehavior createMuleActivityBehavior(SendTask sendTask) {
-        return createMuleActivityBehavior(sendTask,
-                                          sendTask.getFieldExtensions());
+        return createMuleActivityBehavior(sendTask, sendTask.getFieldExtensions());
     }
 
     protected ActivityBehavior createMuleActivityBehavior(TaskWithFieldExtensions task,
