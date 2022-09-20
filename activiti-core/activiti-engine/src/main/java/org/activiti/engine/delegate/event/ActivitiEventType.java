@@ -26,9 +26,6 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Enumeration containing all possible types of {@link ActivitiEvent}s.
- *
-
- *
  */
 public enum ActivitiEventType {
 
@@ -38,7 +35,8 @@ public enum ActivitiEventType {
   ENTITY_CREATED,
 
   /**
-   * New entity has been created and all child-entities that are created as a result of the creation of this particular entity are also created and initialized.
+   * New entity has been created and all child-entities that are created as a result of the creation of
+   * this particular entity are also created and initialized.
    */
   ENTITY_INITIALIZED,
 

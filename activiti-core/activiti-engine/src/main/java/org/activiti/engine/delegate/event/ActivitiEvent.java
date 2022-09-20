@@ -19,9 +19,6 @@ package org.activiti.engine.delegate.event;
 
 /**
  * Describes an event that occurred in the Activiti Engine which is dispatched to external listeners, if any.
- *
-
- *
  */
 public interface ActivitiEvent {
 

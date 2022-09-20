@@ -94,7 +94,7 @@ public class ExtensionElement extends BaseElement {
     setElementText(otherElement.getElementText());
     setAttributes(otherElement.getAttributes());
 
-    childElements = new LinkedHashMap<String, List<ExtensionElement>>();
+    childElements = new LinkedHashMap<>();
     if (otherElement.getChildElements() != null && !otherElement.getChildElements().isEmpty()) {
       for (String key : otherElement.getChildElements().keySet()) {
         List<ExtensionElement> otherElementList = otherElement.getChildElements().get(key);

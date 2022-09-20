@@ -15,6 +15,11 @@
  */
 package org.activiti.bpmn.model;
 
+/**
+ * A Message Flow is used to show the flow of Messages between two Participants that are
+ * prepared to send and receive them (see page 120). In BPMN, two separate Pools in a
+ * Collaboration Diagram will represent the two Participants (e.g., PartnerEntities and/or PartnerRoles).
+ */
 public class MessageFlow extends BaseElement {
 
   protected String name;

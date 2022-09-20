@@ -295,7 +295,8 @@ public interface RepositoryService {
   boolean isProcessDefinitionSuspended(String processDefinitionId);
 
   /**
-   * Returns the {@link BpmnModel} corresponding with the process definition with the provided process definition id. The {@link BpmnModel} is a pojo versions of the BPMN 2.0 xml and can be used to
+   * Returns the {@link BpmnModel} corresponding with the process definition with the provided process definition id.
+   * The {@link BpmnModel} is a pojo versions of the BPMN 2.0 xml and can be used to
    * introspect the process definition using regular Java.
    */
   BpmnModel getBpmnModel(String processDefinitionId);

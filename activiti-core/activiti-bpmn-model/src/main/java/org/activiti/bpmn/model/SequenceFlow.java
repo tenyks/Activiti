@@ -20,6 +20,17 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * A Sequence Flow is used to show the order that Activities will be performed in a Process
+ * (see page 97) and in a Choreography (see page 320).
+ * <p>
+ * 类型：
+ * <li>Normal Flow</li>
+ * <li>Uncontrolled Flow</li>
+ * <li>Conditional Flow</li>
+ * <li>Default Flow</li>
+ * <li>Exception Flow</li>
+ */
 public class SequenceFlow extends FlowElement {
 
   protected String conditionExpression;

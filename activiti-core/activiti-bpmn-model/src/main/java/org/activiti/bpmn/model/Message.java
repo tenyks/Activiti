@@ -20,6 +20,10 @@ import static java.util.Collections.emptyMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A Message is used to depict the contents of a communication between two Participants (as
+ * defined by a business PartnerRole or a business PartnerEntity—see on page 93).
+ */
 public class Message extends BaseElement {
 
   protected String name;

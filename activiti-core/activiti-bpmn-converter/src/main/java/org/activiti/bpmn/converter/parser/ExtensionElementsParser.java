@@ -30,7 +30,7 @@ import org.activiti.bpmn.model.Process;
 import org.activiti.bpmn.model.SubProcess;
 
 /**
-
+ * 对应<bpmn2:extensionElements>的元素
  */
 public class ExtensionElementsParser implements BpmnXMLConstants {
 

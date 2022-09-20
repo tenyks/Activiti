@@ -59,9 +59,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Specific parsing of one BPMN 2.0 XML file, created by the {@link BpmnParser}.
- *
-
-
  */
 public class BpmnParse implements BpmnXMLConstants {
 
@@ -291,8 +288,7 @@ public class BpmnParse implements BpmnXMLConstants {
   public void processFlowElements(Collection<FlowElement> flowElements) {
 
     // Parsing the elements is done in a strict order of types,
-    // as otherwise certain information might not be available when parsing
-    // a certain type.
+    // as otherwise certain information might not be available when parsing a certain type.
 
     // Using lists as we want to keep the order in which they are defined
     List<SequenceFlow> sequenceFlowToParse = new ArrayList<SequenceFlow>();

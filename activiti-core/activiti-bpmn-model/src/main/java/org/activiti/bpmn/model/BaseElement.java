@@ -30,7 +30,7 @@ public abstract class BaseElement implements HasExtensionAttributes {
     protected String id;
     protected int xmlRowNumber;
     protected int xmlColumnNumber;
-    protected Map<String, List<ExtensionElement>> extensionElements = new LinkedHashMap<String, List<ExtensionElement>>();
+    protected Map<String, List<ExtensionElement>> extensionElements = new LinkedHashMap<>();
     /**
      * extension attributes could be part of each element
      */

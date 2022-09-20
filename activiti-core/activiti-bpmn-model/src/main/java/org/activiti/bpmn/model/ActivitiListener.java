@@ -20,6 +20,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * 疑是：执行监听器
+ */
 public class ActivitiListener extends BaseElement {
 
   protected String event;

@@ -17,12 +17,10 @@
 package org.activiti.engine.delegate.event;
 
 /**
- * Base event listener that can be used when implementing an {@link ActivitiEventListener} to get notified when an entity is created, updated, deleted or if another entity-related event occurs.
+ * Base event listener that can be used when implementing an {@link ActivitiEventListener} to get notified
+ * when an entity is created, updated, deleted or if another entity-related event occurs.
  *
  * Override the <code>onXX(..)</code> methods to respond to entity changes accordingly.
- *
-
- *
  */
 public class BaseEntityEventListener implements ActivitiEventListener {
 
@@ -76,7 +74,8 @@ public class BaseEntityEventListener implements ActivitiEventListener {
   }
 
   /**
-   * @return true, if the event is an {@link ActivitiEntityEvent} and (if needed) the entityClass set in this instance, is assignable from the entity class in the event.
+   * @return true, if the event is an {@link ActivitiEntityEvent} and (if needed) the entityClass set in this instance,
+   * is assignable from the entity class in the event.
    */
   protected boolean isValidEvent(ActivitiEvent event) {
     boolean valid = false;

@@ -18,7 +18,7 @@
 package org.activiti.engine.delegate;
 
 /**
-
+ * 任务节点事件监听器
  */
 public interface TaskListener extends BaseTaskListener {
 
