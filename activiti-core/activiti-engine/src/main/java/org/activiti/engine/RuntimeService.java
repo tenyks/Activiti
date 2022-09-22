@@ -314,7 +314,8 @@ public interface RuntimeService {
   void deleteProcessInstance(String processInstanceId, String deleteReason);
 
   /**
-   * Finds the activity ids for all executions that are waiting in activities. This is a list because a single activity can be active multiple times.
+   * Finds the activity ids for all executions that are waiting in activities.
+   * This is a list because a single activity can be active multiple times.
    *
    * @param executionId
    *          id of the execution, cannot be null.

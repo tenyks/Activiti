@@ -23,6 +23,11 @@ import org.activiti.engine.impl.context.Context;
 import org.activiti.engine.impl.interceptor.CommandContext;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 
+/**
+ * 执行结果：
+ * <li>触发ActivitiEventType.ACTIVITY_SIGNALED事件</li>
+ * <li>触发下一步</li>
+ */
 public class TriggerCmd extends NeedsActiveExecutionCmd<Object> {
 
   private static final long serialVersionUID = 1L;

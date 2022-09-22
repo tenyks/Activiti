@@ -23,8 +23,6 @@ import org.activiti.engine.delegate.event.ActivitiEntityEvent;
 
 /**
  * Base class for all {@link ActivitiEvent} implementations, related to entities.
- *
-
  */
 public class ActivitiEntityEventImpl extends ActivitiEventImpl implements ActivitiEntityEvent {
 
