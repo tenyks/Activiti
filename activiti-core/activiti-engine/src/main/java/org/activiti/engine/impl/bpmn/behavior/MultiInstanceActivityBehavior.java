@@ -336,14 +336,17 @@ public abstract class MultiInstanceActivityBehavior extends FlowNodeActivityBeha
 
     protected DelegateExecution getMultiInstanceRootExecution(DelegateExecution executionEntity) {
         DelegateExecution multiInstanceRootExecution = null;
+
         DelegateExecution currentExecution = executionEntity;
-        while (currentExecution != null && multiInstanceRootExecution == null && currentExecution.getParent() != null) {
+        while (multiInstanceRootExecution == null && currentExecution != null && currentExecution.getParent() != null) {
             if (currentExecution.isMultiInstanceRoot()) {
                 multiInstanceRootExecution = currentExecution;
+                //break;
             } else {
                 currentExecution = currentExecution.getParent();
             }
         }
+
         return multiInstanceRootExecution;
     }
 
@@ -444,11 +447,12 @@ public abstract class MultiInstanceActivityBehavior extends FlowNodeActivityBeha
         this.outputDataItem = outputDataItem;
     }
 
-    protected void updateResultCollection(DelegateExecution childExecution,
-                                          DelegateExecution miRootExecution) {
+    /**
+     * 收集resultElementItem到loopDataOutputRef所引用的列表
+     */
+    protected void updateResultCollection(DelegateExecution childExecution, DelegateExecution miRootExecution) {
         if (miRootExecution != null && hasLoopDataOutputRef()) {
-            Object loopDataOutputReference = miRootExecution
-                .getVariableLocal(getLoopDataOutputRef());
+            Object loopDataOutputReference = miRootExecution.getVariableLocal(getLoopDataOutputRef());
             List<Object> resultCollection;
             if (loopDataOutputReference instanceof List) {
                 resultCollection = (List<Object>) loopDataOutputReference;

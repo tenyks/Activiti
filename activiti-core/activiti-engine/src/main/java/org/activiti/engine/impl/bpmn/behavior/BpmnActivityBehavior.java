@@ -94,8 +94,7 @@ public class BpmnActivityBehavior implements Serializable {
     protected void performOutgoingBehavior(ExecutionEntity execution,
                                            boolean checkConditions,
                                            boolean throwExceptionIfExecutionStuck) {
-        getAgenda().planTakeOutgoingSequenceFlowsOperation(execution,
-                                                                   true);
+        getAgenda().planTakeOutgoingSequenceFlowsOperation(execution, true);
     }
 
     protected ActivitiEngineAgenda getAgenda() {

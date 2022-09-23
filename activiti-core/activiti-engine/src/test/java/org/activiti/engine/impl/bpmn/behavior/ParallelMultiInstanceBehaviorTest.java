@@ -24,10 +24,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.MockitoAnnotations.openMocks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
+
 import org.activiti.bpmn.model.Activity;
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.impl.cmd.CompleteTaskCmd;
@@ -157,7 +155,10 @@ public class ParallelMultiInstanceBehaviorTest {
     @Test
     public void getResultItemElement_should_returnOutputDataItem_when_outputDataItemIsSet() {
         //given
-        Map<String, Object> variables = Map.of("name", "John", "city", "London");
+//        Map<String, Object> variables = Map.of("name", "John", "city", "London");
+        Map<String, Object> variables = new HashMap<>();
+        variables.put("name", "John");
+        variables.put("city", "London");
         multiInstanceBehavior.setOutputDataItem("city");
 
         //when
@@ -172,22 +173,22 @@ public class ParallelMultiInstanceBehaviorTest {
         //given
         multiInstanceBehavior.setOutputDataItem(null);
         multiInstanceBehavior.setCollectionElementIndexVariable("counter");
-        Map<String, Object> variables = Map.of(
-            "name", "John",
-            "city", "London",
-            MultiInstanceActivityBehavior.NUMBER_OF_COMPLETED_INSTANCES, 3,
-            MultiInstanceActivityBehavior.NUMBER_OF_ACTIVE_INSTANCES, 2,
-            MultiInstanceActivityBehavior.NUMBER_OF_INSTANCES, 5,
-            multiInstanceBehavior.getCollectionElementIndexVariable(), 1
-            );
+        Map<String, Object> variables = new HashMap<>();
+        variables.put("name", "John");
+        variables.put("city", "London");
+        variables.put(MultiInstanceActivityBehavior.NUMBER_OF_COMPLETED_INSTANCES, 3);
+        variables.put(MultiInstanceActivityBehavior.NUMBER_OF_ACTIVE_INSTANCES, 2);
+        variables.put(MultiInstanceActivityBehavior.NUMBER_OF_INSTANCES, 5);
+        variables.put(multiInstanceBehavior.getCollectionElementIndexVariable(), 1);
 
         //when
         Object resultElementItem = multiInstanceBehavior.getResultElementItem(variables);
 
         //then
-        assertThat(resultElementItem).isEqualTo(Map.of(
-            "name", "John",
-            "city", "London"));
+        Map<String, Object> tmp = new HashMap<>();
+        tmp.put("name", "John");
+        tmp.put("city", "London");
+        assertThat(resultElementItem).isEqualTo(tmp);
     }
 
     @Test
