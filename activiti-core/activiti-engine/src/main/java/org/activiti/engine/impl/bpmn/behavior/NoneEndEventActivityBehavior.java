@@ -21,7 +21,7 @@ import org.activiti.engine.impl.context.Context;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 
 /**
-
+ * 正常结束事件行为
  */
 public class NoneEndEventActivityBehavior extends FlowNodeActivityBehavior {
 

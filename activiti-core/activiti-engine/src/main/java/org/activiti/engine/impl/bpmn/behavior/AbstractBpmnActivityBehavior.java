@@ -43,7 +43,7 @@ public class AbstractBpmnActivityBehavior extends FlowNodeActivityBehavior {
 
   /**
    * Subclasses that call leave() will first pass through this method,
-   * before the regular {@link FlowNodeActivityBehavior#leave(ActivityExecution)} is called.<br>
+   * before the regular {@link FlowNodeActivityBehavior#leave(DelegateExecution)} is called.<br>
    * This way, we can check if the activity has loop characteristics, and delegate to the behavior if this is the case.
    */
   public void leave(DelegateExecution execution) {
@@ -60,7 +60,6 @@ public class AbstractBpmnActivityBehavior extends FlowNodeActivityBehavior {
   }
 
   protected void executeCompensateBoundaryEvents(Collection<BoundaryEvent> boundaryEvents, DelegateExecution execution) {
-
     // The parent execution becomes a scope, and a child execution is created for each of the boundary events
     for (BoundaryEvent boundaryEvent : boundaryEvents) {
 
@@ -72,7 +71,8 @@ public class AbstractBpmnActivityBehavior extends FlowNodeActivityBehavior {
         continue;
       }
 
-      ExecutionEntity childExecutionEntity = Context.getCommandContext().getExecutionEntityManager().createChildExecution((ExecutionEntity) execution);
+      ExecutionEntity childExecutionEntity = Context.getCommandContext().getExecutionEntityManager()
+                                                    .createChildExecution((ExecutionEntity) execution);
       childExecutionEntity.setParentId(execution.getId());
       childExecutionEntity.setCurrentFlowElement(boundaryEvent);
       childExecutionEntity.setScope(false);

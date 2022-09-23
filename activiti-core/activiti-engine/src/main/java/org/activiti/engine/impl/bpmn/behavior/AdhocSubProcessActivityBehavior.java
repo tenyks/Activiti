@@ -29,8 +29,6 @@ import org.activiti.engine.delegate.DelegateExecution;
 
 /**
  * Implementation of the BPMN 2.0 ad-hoc subprocess.
- *
-
  */
 public class AdhocSubProcessActivityBehavior extends AbstractBpmnActivityBehavior {
 
@@ -53,7 +51,8 @@ public class AdhocSubProcessActivityBehavior extends AbstractBpmnActivityBehavio
     if (flowElement instanceof SubProcess) {
       subProcess = (SubProcess) flowElement;
     } else {
-      throw new ActivitiException("Programmatic error: sub process behaviour can only be applied" + " to a SubProcess instance, but got an instance of " + flowElement);
+      throw new ActivitiException("Programmatic error: sub process behaviour can only be applied" +
+                                    " to a SubProcess instance, but got an instance of " + flowElement);
     }
     return subProcess;
   }

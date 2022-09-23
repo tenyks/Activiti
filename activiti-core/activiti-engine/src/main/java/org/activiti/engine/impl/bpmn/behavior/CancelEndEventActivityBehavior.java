@@ -36,7 +36,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
-
+ * 取消事件行为
  */
 public class CancelEndEventActivityBehavior extends FlowNodeActivityBehavior {
 
@@ -50,6 +50,7 @@ public class CancelEndEventActivityBehavior extends FlowNodeActivityBehavior {
     ExecutionEntityManager executionEntityManager = commandContext.getExecutionEntityManager();
 
     // find cancel boundary event:
+      //ANN: 从当前execution出发，沿这执行树望上溯源到最近的currentFlowElement = SubProcess的ancestorExecution
     ExecutionEntity parentScopeExecution = null;
     ExecutionEntity currentlyExaminedExecution = executionEntityManager.findById(executionEntity.getParentId());
     while (currentlyExaminedExecution != null && parentScopeExecution == null) {
@@ -57,13 +58,13 @@ public class CancelEndEventActivityBehavior extends FlowNodeActivityBehavior {
         parentScopeExecution = currentlyExaminedExecution;
         SubProcess subProcess = (SubProcess) currentlyExaminedExecution.getCurrentFlowElement();
         if (subProcess.getLoopCharacteristics() != null) {
+            //ANN : 这是神码逻辑？
           ExecutionEntity miExecution = parentScopeExecution.getParent();
           FlowElement miElement = miExecution.getCurrentFlowElement();
           if (miElement != null && miElement.getId().equals(subProcess.getId())) {
             parentScopeExecution = miExecution;
           }
         }
-
       } else {
         currentlyExaminedExecution = executionEntityManager.findById(currentlyExaminedExecution.getParentId());
       }
@@ -72,6 +73,7 @@ public class CancelEndEventActivityBehavior extends FlowNodeActivityBehavior {
     if (parentScopeExecution == null) {
       throw new ActivitiException("No sub process execution found for cancel end event " + executionEntity.getCurrentActivityId());
     }
+
 
     SubProcess subProcess = (SubProcess) parentScopeExecution.getCurrentFlowElement();
     BoundaryEvent cancelBoundaryEvent = null;
@@ -140,7 +142,7 @@ public class CancelEndEventActivityBehavior extends FlowNodeActivityBehavior {
   }
 
   protected void deleteChildExecutions(ExecutionEntity parentExecution, ExecutionEntity notToDeleteExecution,
-      CommandContext commandContext, String deleteReason) {
+                                       CommandContext commandContext, String deleteReason) {
     // Delete all child executions
     ExecutionEntityManager executionEntityManager = commandContext.getExecutionEntityManager();
     Collection<ExecutionEntity> childExecutions = executionEntityManager.findChildExecutionsByParentExecutionId(parentExecution.getId());

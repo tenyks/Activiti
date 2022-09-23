@@ -22,7 +22,6 @@ import org.activiti.engine.impl.delegate.invocation.DelegateInvocation;
 
 /**
  *
-
  */
 public class ActivityBehaviorInvocation extends DelegateInvocation {
 

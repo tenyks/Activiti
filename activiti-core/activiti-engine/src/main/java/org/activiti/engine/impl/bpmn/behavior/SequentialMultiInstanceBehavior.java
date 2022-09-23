@@ -37,7 +37,8 @@ public class SequentialMultiInstanceBehavior extends MultiInstanceActivityBehavi
   }
 
   /**
-   * Handles the sequential case of spawning the instances. Will only create one instance, since at most one instance can be active.
+   * Handles the sequential case of spawning the instances.
+   * Will only create one instance, since at most one instance can be active.
    */
   protected int createInstances(DelegateExecution multiInstanceExecution) {
 
@@ -50,7 +51,7 @@ public class SequentialMultiInstanceBehavior extends MultiInstanceActivityBehavi
 
     // Create child execution that will execute the inner behavior
     ExecutionEntity childExecution = Context.getCommandContext().getExecutionEntityManager()
-        .createChildExecution((ExecutionEntity) multiInstanceExecution);
+                                            .createChildExecution((ExecutionEntity) multiInstanceExecution);
     childExecution.setCurrentFlowElement(multiInstanceExecution.getCurrentFlowElement());
     multiInstanceExecution.setMultiInstanceRoot(true);
     multiInstanceExecution.setActive(false);
@@ -67,8 +68,8 @@ public class SequentialMultiInstanceBehavior extends MultiInstanceActivityBehavi
   }
 
   /**
-   * Called when the wrapped {@link ActivityBehavior} calls the {@link AbstractBpmnActivityBehavior#leave(DelegateExecution)} method. Handles the completion of one instance, and executes the logic for
-   * the sequential behavior.
+   * Called when the wrapped {@link ActivityBehavior} calls the {@link AbstractBpmnActivityBehavior#leave(DelegateExecution)} method.
+   * Handles the completion of one instance, and executes the logic for the sequential behavior.
    */
   public void leave(DelegateExecution childExecution) {
     DelegateExecution multiInstanceRootExecution = getMultiInstanceRootExecution(childExecution);
@@ -95,10 +96,8 @@ public class SequentialMultiInstanceBehavior extends MultiInstanceActivityBehavi
       Context.getCommandContext().getExecutionEntityManager().deleteChildExecutions((ExecutionEntity) multiInstanceRootExecution, "MI_END");
       dispatchActivityCompletedEvent(childExecution);
       super.leave(multiInstanceRootExecution);
-
     } else {
       try {
-
         if (childExecution.getCurrentFlowElement() instanceof SubProcess) {
           ExecutionEntityManager executionEntityManager = Context.getCommandContext().getExecutionEntityManager();
           ExecutionEntity executionToContinue = executionEntityManager.createChildExecution((ExecutionEntity) multiInstanceRootExecution);
@@ -109,6 +108,7 @@ public class SequentialMultiInstanceBehavior extends MultiInstanceActivityBehavi
         } else {
           executeOriginalBehavior(childExecution, loopCounter);
         }
+
         dispatchActivityCompletedEvent(childExecution);
       } catch (BpmnError error) {
         // re-throw business fault so that it can be caught by an Error
