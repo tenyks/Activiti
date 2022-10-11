@@ -29,7 +29,7 @@ import org.activiti.engine.impl.context.Context;
 import org.activiti.engine.impl.delegate.invocation.TaskListenerInvocation;
 
 /**
-
+ *
  */
 public class DelegateExpressionTaskListener implements TaskListener {
 
@@ -45,7 +45,8 @@ public class DelegateExpressionTaskListener implements TaskListener {
     Object delegate = DelegateExpressionUtil.resolveDelegateExpression(expression, delegateTask, fieldDeclarations);
     if (delegate instanceof TaskListener) {
       try {
-        Context.getProcessEngineConfiguration().getDelegateInterceptor().handleInvocation(new TaskListenerInvocation((TaskListener) delegate, delegateTask));
+        Context.getProcessEngineConfiguration().getDelegateInterceptor()
+            .handleInvocation(new TaskListenerInvocation((TaskListener) delegate, delegateTask));
       } catch (Exception e) {
         throw new ActivitiException("Exception while invoking TaskListener: " + e.getMessage(), e);
       }

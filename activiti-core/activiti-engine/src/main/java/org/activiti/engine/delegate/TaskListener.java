@@ -19,8 +19,11 @@ package org.activiti.engine.delegate;
 
 /**
  * 任务节点事件监听器
+ * 用处：<br>
+ * <li>BPMN.xml中taskListener</li>
  */
 public interface TaskListener extends BaseTaskListener {
 
   void notify(DelegateTask delegateTask);
+
 }
