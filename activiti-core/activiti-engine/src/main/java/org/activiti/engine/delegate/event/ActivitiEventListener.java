@@ -17,6 +17,7 @@
 package org.activiti.engine.delegate.event;
 
 /**
+ * 实施BPMN中的事件监听器；
  * Describes a class that listens for {@link ActivitiEvent}s dispatched by the engine.
  */
 public interface ActivitiEventListener {

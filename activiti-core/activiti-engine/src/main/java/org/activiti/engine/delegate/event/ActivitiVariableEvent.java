@@ -20,9 +20,6 @@ import org.activiti.engine.impl.variable.VariableType;
 
 /**
  * An {@link ActivitiEvent} related to a single variable.
- *
-
-
  */
 public interface ActivitiVariableEvent extends ActivitiEvent {
 

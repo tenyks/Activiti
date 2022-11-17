@@ -232,6 +232,10 @@ public class ContinueProcessOperation extends AbstractOperation {
         }
     }
 
+    /**
+     * [KEY_FUN]
+     * @param sequenceFlow
+     */
     protected void continueThroughSequenceFlow(SequenceFlow sequenceFlow) {
 
         // Execution listener. SequenceFlow only 'take' makes sense ... but we've supported all three since the beginning

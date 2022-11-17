@@ -16,7 +16,8 @@
 package org.activiti.bpmn.model;
 
 /**
- * Element for defining an event listener to hook in to the global event-mechanism.
+ * BPMN中声明的事件监听器<br>
+ * Element for defining an event listener to hook in to the global event-mechanism.<br>
  */
 public class EventListener extends BaseElement {
 
